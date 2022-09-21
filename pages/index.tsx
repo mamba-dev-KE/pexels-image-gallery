@@ -1,14 +1,16 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { Container } from '@mantine/core';
-import { NavBar } from 'components/NavBar';
+import { Box, Container } from '@mantine/core';
 import { useCuratedPhotos } from 'hooks/';
+import { NavBar, CuratedList } from 'components';
+import { AxiosError } from 'axios';
 
 const Home: NextPage = () => {
-  const { data: curated, isLoading, error, isError } = useCuratedPhotos();
+  const { isLoading, error } = useCuratedPhotos();
 
-  if (isLoading) <div>Loading</div>;
-  if (isError) <div>{JSON.stringify(error)}</div>;
+  if (isLoading) return <Box>Loading</Box>;
+  if (error instanceof AxiosError)
+    return <Box sx={{color:'red'}}>{error.message.toLocaleLowerCase()}</Box>;
 
   return (
     <Container size="lg">
@@ -17,7 +19,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar />
-      <div>{JSON.stringify(curated)}</div>
+      <CuratedList />
     </Container>
   );
 };
