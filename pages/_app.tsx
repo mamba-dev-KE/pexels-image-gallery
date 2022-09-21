@@ -5,7 +5,6 @@ import {
 } from '@mantine/core';
 import { useLocalStorage } from '@mantine/hooks';
 import type { AppProps } from 'next/app';
-import '../styles/globals.css';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
