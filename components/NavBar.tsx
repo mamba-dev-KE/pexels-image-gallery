@@ -9,7 +9,7 @@ import { IconMoon, IconSun } from '@tabler/icons';
 
 export const NavBar = () => {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-  
+
   const dark = colorScheme === 'dark';
 
   return (
@@ -20,7 +20,7 @@ export const NavBar = () => {
           title="Toggle color scheme"
           size="lg"
           variant="outline"
-          radius="lg"
+          radius="md"
           color={dark ? 'green' : 'blue'}
           onClick={() => toggleColorScheme()}
         >
