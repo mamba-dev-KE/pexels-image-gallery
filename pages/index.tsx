@@ -1,20 +1,17 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { useMantineColorScheme } from '@mantine/core';
+import { Container } from '@mantine/core';
+import { NavBar } from 'components/NavBar';
 
 const Home: NextPage = () => {
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-
   return (
-    <div>
+    <Container size="lg">
       <Head>
         <title>Pexels Image Gallery</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <button onClick={() => toggleColorScheme()}>
-        {colorScheme === 'dark' ? 'Light' : 'Dark'}
-      </button>
-    </div>
+      <NavBar />
+    </Container>
   );
 };
 
