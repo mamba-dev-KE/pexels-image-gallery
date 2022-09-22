@@ -1,9 +1,18 @@
 import { useQuery } from '@tanstack/react-query';
 
+interface Photo {
+  id: string;
+  width: number;
+  height: number;
+  src: {
+    original: string;
+  };
+  photographer: string;
+}
 const API_KEY = process.env.NEXT_PUBLIC_PEXELS_API_KEY;
 
 export const getCuratedPhotos = async () => {
-  const res = await fetch(`https://api.pexels.com/v7/curated`, {
+  const res = await fetch(`https://api.pexels.com/v1/curated`, {
     headers: {
       Authorization: API_KEY as string,
     },
@@ -15,5 +24,5 @@ export const getCuratedPhotos = async () => {
 };
 
 export const useCuratedPhotos = () => {
-  return useQuery(['curated-photos'], getCuratedPhotos);
+  return useQuery<Photo[], Error>(['curated-photos'], getCuratedPhotos);
 };

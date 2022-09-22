@@ -5,11 +5,10 @@ import { useCuratedPhotos } from 'hooks/';
 import { NavBar, CuratedList } from 'components';
 
 const Home: NextPage = () => {
-  const { isLoading, error } = useCuratedPhotos();
+  const { isLoading, isError, error } = useCuratedPhotos();
 
   if (isLoading) return <Box>Loading</Box>;
-  if (error instanceof Error)
-    return <Box sx={{ color: 'red' }}>{error.message}</Box>;
+  if (isError) return <Box sx={{ color: 'red' }}>{error.message}</Box>;
 
   return (
     <Container size="lg">
