@@ -11,6 +11,8 @@
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/server": "^11.10.0",
+    "@fontsource/aleo": "^4.5.8",
+    "@fontsource/euphoria-script": "^4.5.9",
     "@mantine/core": "^5.4.0",
     "@mantine/hooks": "^5.4.0",
     "@mantine/next": "^5.4.0",

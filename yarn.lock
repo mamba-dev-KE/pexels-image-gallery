@@ -214,6 +214,16 @@
     "@floating-ui/dom" "^0.5.3"
     use-isomorphic-layout-effect "^1.1.1"
 
+"@fontsource/aleo@^4.5.8":
+  version "4.5.8"
+  resolved "https://registry.yarnpkg.com/@fontsource/aleo/-/aleo-4.5.8.tgz#cd0de8bc36187de4925fba063e2a6c7093af526d"
+  integrity sha512-oJhPjjR+2KyZShv7Lx17KsENcIXnBeRRWQO2thF86qDYeJOLN4O7dZJb+9q38TI8s7ydw0OUiXzfckBkAvTyTw==
+
+"@fontsource/euphoria-script@^4.5.9":
+  version "4.5.9"
+  resolved "https://registry.yarnpkg.com/@fontsource/euphoria-script/-/euphoria-script-4.5.9.tgz#53577496cf49531110f7fbb91ed6d7e35c0214f4"
+  integrity sha512-hpdtNozodWjqCGMjarnwdWYdbmdX+tXm/NdAzi73bOTdI7fJT0Cm3WCntmgBZkcpE2DacB7r0fnkTkl1OZjCBg==
+
 "@humanwhocodes/config-array@^0.10.4":
   version "0.10.4"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.10.4.tgz#01e7366e57d2ad104feea63e72248f22015c520c"
