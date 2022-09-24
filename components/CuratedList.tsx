@@ -8,7 +8,13 @@ export const CuratedList = () => {
     <Grid gutter="xl">
       {curated?.map(({ id, src, photographer }) => (
         <Grid.Col key={id} xs={12} md={6} lg={4}>
-          <Paper>
+          <Paper
+            shadow="lg"
+            pb="lg"
+            sx={{
+              backgroundColor: 'hsl(0 0% 100% / 0.2)',
+            }}
+          >
             <Image
               src={src.portrait}
               width={400}
@@ -17,7 +23,9 @@ export const CuratedList = () => {
               objectFit="cover"
               loading="lazy"
             />
-            <Text>By {photographer}</Text>
+            <Text align="center" mt="sm" size="md" weight={600}>
+              By {photographer}
+            </Text>
           </Paper>
         </Grid.Col>
       ))}
