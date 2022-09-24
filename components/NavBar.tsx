@@ -22,7 +22,7 @@ export const NavBar = () => {
           height="50"
           viewBox="0 0 24 24"
           stroke-width="3.5"
-          stroke="#ffffff"
+          stroke={dark ? '#ffffff' : '#000000'}
           fill="none"
           stroke-linecap="round"
           stroke-linejoin="round"
