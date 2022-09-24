@@ -1,25 +1,26 @@
-import { Box, Paper, Text } from '@mantine/core';
-import { useCuratedPhotos } from 'hooks';
+import { Grid, Paper, Text } from '@mantine/core';
 import Image from 'next/image';
+import { useCuratedPhotos } from 'hooks';
 
 export const CuratedList = () => {
   const { data: curated } = useCuratedPhotos();
   return (
-    <Box>
-      {curated?.map(({ id, width, height, src, photographer }) => (
-        <Paper key={id}>
-          <Image
-            src={src.original}
-            width={width}
-            height={height}
-            alt=""
-            objectFit="cover"
-            loading="lazy"
-            style={{ width: '10rem' }}
-          />
-          <Text>By {photographer}</Text>
-        </Paper>
+    <Grid gutter="xl">
+      {curated?.map(({ id, src, photographer }) => (
+        <Grid.Col key={id} xs={12} md={6} lg={4}>
+          <Paper>
+            <Image
+              src={src.portrait}
+              width={400}
+              height={600}
+              alt=""
+              objectFit="cover"
+              loading="lazy"
+            />
+            <Text>By {photographer}</Text>
+          </Paper>
+        </Grid.Col>
       ))}
-    </Box>
+    </Grid>
   );
 };

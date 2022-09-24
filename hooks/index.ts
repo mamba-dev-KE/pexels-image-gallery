@@ -6,6 +6,7 @@ interface Photo {
   height: number;
   src: {
     original: string;
+    portrait: string;
   };
   photographer: string;
 }
@@ -19,10 +20,9 @@ export const getCuratedPhotos = async () => {
   });
 
   const data = await res.json();
-
+  
   return data.photos;
 };
 
-export const useCuratedPhotos = () => {
-  return useQuery<Photo[], Error>(['curated-photos'], getCuratedPhotos);
-};
+export const useCuratedPhotos = () =>
+  useQuery<Photo[], Error>(['curated-photos'], getCuratedPhotos);
