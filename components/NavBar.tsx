@@ -34,7 +34,7 @@ export const NavBar = () => {
           <path d="M16 20h2a2 2 0 0 0 2 -2v-2" />
           <circle cx="12" cy="12" r="3" />
         </svg>
-        <Text size={28} sx={{ fontFamily: 'Aleo' }}>
+        <Text size={28} sx={{ fontFamily: 'Aleo', fontWeight: 700 }}>
           Pixie
         </Text>
 
